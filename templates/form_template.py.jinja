@@ -1,0 +1,6 @@
+class {{ form_name|join('Form') }}(forms.Form):
+
+    #Here are the fields of your form
+    {% for field in fields %}
+    {{ field.name }} = {{ field.type }}()
+    {% endfor %}

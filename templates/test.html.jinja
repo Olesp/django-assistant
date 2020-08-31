@@ -1,0 +1,5 @@
+def {{ view_name }}(request, {% for argument in arguments %}{{ argument|join(', ') }}{% endfor %}):
+    {% {% for var in vars %}
+        {{ var.name }} = 
+    {% endfor %}}
+    return HttpResponse(html)

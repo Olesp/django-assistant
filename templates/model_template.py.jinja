@@ -1,0 +1,14 @@
+class {{ model_name }}(models.Model):
+
+    #Here are the fields created by django-assistant make sure to complete the parenthesis properly
+    {% for field in fields %}
+    {{ field.name }} = {{ field.type }}("{{ field.name }}")
+    {%- endfor %}
+
+    #For now the assistant assign the default model name
+    class Meta:
+        verbose_name = "{{ model_verbose_name }}"
+
+    #By default this return the first field you created
+    def __str__(self):
+        return self.{{ fields[0].name }}
